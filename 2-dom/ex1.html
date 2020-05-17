@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>Exercicio 1</title>
+	</head>
+	
+	<body>
+		<div id="container">
+			<button class="button" id="generate">Generate Squad!</button>
+			<!-- Div representativa do quadrado -->
+			<div class="squad" >
+			</div>
+		</div>
+		
+		<script>
+			<!-- Capturação da DOM - div e definição do estilo do quadrado -->
+			var squad = document.querySelector('.squad');
+			squad.style.width = 100;
+			squad.style.height = 100;
+			squad.style.backgroundColor = 'F00';
+			squad.style.marginTop = 20;
+			
+			<!-- Captura da DOM botão e definição da função ao clicar-->
+			var btn = document.querySelector('button#generate');
+			btn.style.color = '#fff'
+			btn.style.fontWeight = 'bold';
+			btn.style.backgroundColor = '#424242';
+			btn.style.border = 'solid #ddd';
+			btn.style.width = '200px';
+			btn.style.height = '40px';
+			btn.style.marginLeft = '45%';
+
+			btn.onclick = function(){
+				<!-- declaração do novo quadrado -->
+				var newSquad = document.createElement('div');
+				newSquad.style.width = 100;
+				newSquad.style.height = 100;
+				newSquad.style.backgroundColor = 'F00';
+				newSquad.style.marginTop = 20;
+				
+				<!-- Adicionar classe do novo quadrado e adiciona ele ao body"
+				newSquad.classList.add('squad');
+				document.body.appendChild(newSquad);
+			}
+		</script>
+	</body>
+</html>
