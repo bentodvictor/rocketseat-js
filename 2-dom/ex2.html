@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<title>Exercicio 1</title>
+	</head>
+	
+	<body>
+		<div id="container">
+			<button class="button" id="generate">Generate Squad!</button>
+			<!-- Div representativa do quadrado -->
+			<div class="squad" >
+			</div>
+		</div>
+		
+		<script>
+			
+			<!-- Captura da DOM botão e definição da função ao clicar-->
+			var btn = document.querySelector('button#generate');
+			btn.style.color = '#fff'
+			btn.style.fontWeight = 'bold';
+			btn.style.backgroundColor = '#424242';
+			btn.style.border = 'solid #ddd';
+			btn.style.width = '200px';
+			btn.style.height = '40px';
+			btn.style.marginLeft = '45%';
+
+			btn.onclick = function(){
+				<!-- declaração do novo quadrado -->
+				var newSquad = document.createElement('div');
+				newSquad.style.width = 100;
+				newSquad.style.height = 100;
+				newSquad.style.backgroundColor = 'F00';
+				newSquad.style.marginTop = 20;
+				
+				<!-- Função para gerar cor aleatória -->
+				function getRandomColor() {
+					var letters = "0123456789ABCDEF";
+					var color = "#";
+					for (var i = 0; i < 6; i++) {
+						color += letters[Math.floor(Math.random() * 16)];
+					}
+					return color;
+				}
+				var newColor = getRandomColor(); // #E943F0
+				
+				<!-- Trocar cor do quadrado quando mouse passa por cima -->
+				newSquad.addEventListener("mouseenter", mouseEnter);
+				newSquad.addEventListener("mouseleave", mouseLeave);				
+				function mouseEnter(){
+					newSquad.style.backgroundColor = newColor;
+				}
+				function mouseLeave() {
+					newSquad.style.backgroundColor = "red";
+				}
+					
+				
+				<!-- Adicionar classe do novo quadrado e adiciona ele ao body"
+				newSquad.classList.add('squad');
+				document.body.appendChild(newSquad);
+			}
+			
+			
+			
+		</script>
+	</body>
+</html>
