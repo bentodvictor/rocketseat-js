@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>Exercicio 4</title>
+	</head>
+	
+	<body>
+		<input type="text" id="nome"> 
+		<button onClick="adicionar()">Adicionar</button>
+		<div id="container">
+			<ul id="list">
+			</ul>
+		</div>
+		
+		<script>
+
+			var nomes = ["Diego", "Gabriel", "Lucas"];
+
+			for (var i = 0; i < nomes.length; i++) {
+				var li = document.createElement('li');
+				li.innerHTML = nomes[i];
+				document.getElementById('list').appendChild(li);
+			}
+
+			function adicionar() {
+				var li = document.createElement('LI');
+				li.innerHTML = document.getElementById('nome').value;
+				document.getElementById('list').appendChild(li);
+				document.getElementById('nome').value = ''
+			}
+		</script>
+	</body>
+</html>

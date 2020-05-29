@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>Exercicio 3</title>
+	</head>
+	
+	<body>
+		<div id="container">
+			<ul id="list">
+			</ul>
+		</div>
+		
+		<script>
+			var nomes = ["Diego", "Gabriel", "Lucas"];
+
+			for (var i = 0; i < nomes.length; i++) {
+				var li = document.createElement('li');
+				li.innerHTML = nomes[i];
+				document.getElementById('list').appendChild(li);
+			}
+		</script>
+	</body>
+</html>
